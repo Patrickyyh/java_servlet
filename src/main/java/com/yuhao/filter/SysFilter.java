@@ -15,7 +15,8 @@ public class SysFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-       //因为ServletRequest 拿不到http的session , 所以要强制转换为HtttpServlet
+       //因为ServletRequest 拿不到http的session , 所以要强制转换为HtttpServlet\
+        //  since we have to get http session , so we have to convet into HttpServlet 
         HttpServletRequest servletRequest1 = (HttpServletRequest) servletRequest;
         HttpServletResponse servletResponse1 = (HttpServletResponse) servletResponse;
         Object userName = servletRequest1.getSession().getAttribute(Constant.User_name);
